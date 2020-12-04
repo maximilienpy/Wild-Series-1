@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Season{% endblock %}
+{% block title %}Saison{% endblock %}
 
 {% block body %}
-    <h1>Season</h1>
+    <h1>Saison</h1>
 
     <table class="table">
         <tbody>
@@ -12,11 +12,11 @@
                 <td>{{ season.id }}</td>
             </tr>
             <tr>
-                <th>Number</th>
+                <th>Nombre</th>
                 <td>{{ season.number }}</td>
             </tr>
             <tr>
-                <th>Year</th>
+                <th>Année</th>
                 <td>{{ season.year }}</td>
             </tr>
             <tr>
@@ -26,9 +26,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('season_index') }}">back to list</a>
+    <a href="{{ path('season_index') }}">Retour à la liste des saisons</a>
 
-    <a href="{{ path('season_edit', {'id': season.id}) }}">edit</a>
+    <a href="{{ path('season_edit', {'id': season.id}) }}">Modifier</a>
 
     {{ include('season/_delete_form.html.twig') }}
 {% endblock %}

@@ -12,11 +12,11 @@
                 <td>{{ episode.id }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>Titre</th>
                 <td>{{ episode.title }}</td>
             </tr>
             <tr>
-                <th>Number</th>
+                <th>Nombre</th>
                 <td>{{ episode.number }}</td>
             </tr>
             <tr>
@@ -26,9 +26,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('episode_index') }}">back to list</a>
+    <a href="{{ path('episode_index') }}">Retour à la liste des épisodes</a>
 
-    <a href="{{ path('episode_edit', {'id': episode.id}) }}">edit</a>
+    <a href="{{ path('episode_edit', {'id': episode.id}) }}">Modifier</a>
 
     {{ include('episode/_delete_form.html.twig') }}
 {% endblock %}

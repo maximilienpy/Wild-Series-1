@@ -1,28 +1,44 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand nav-style" href="{{ path('app_index') }}">WILD SERIES</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link nav-style" href="{{ path('app_index') }}">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-style" href="{{ path('program_index') }}">SERIES</a>
-      </li>
-            <li class="nav-item">
-        <a class="nav-link nav-style" href="{{ path('category_index') }}">Catégories</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-style" href="#">Favoris</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-style" href="#">Deconnexion</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-style" href="#">Compte utlisateur</a>
-      </li>
-    </ul>
-  </div>
+	<a class="navbar-brand nav-style" href="{{ path('app_index') }}">WILD SERIES</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav">
+			<li class="nav-item active">
+				<a class="nav-link nav-style" href="{{ path('app_index') }}">Home
+					<span class="sr-only">(current)</span>
+				</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					SERIES
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="{{ path('program_index') }}">Toutes les séries</a>
+					<a class="dropdown-item" href="{{ path('program_new') }}">Ajouter une série</a>
+					<a class="dropdown-item" href="{{ path('season_index') }}">Toutes les saisons</a>
+					<a class="dropdown-item" href="{{ path('episode_index') }}">Tous les épisodes</a>
+				</li>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					CATEGORIES
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="{{ path('category_index') }}">Toutes les catégories</a>
+					<a class="dropdown-item" href="{{ path('category_new') }}">Ajouter une catégorie</a>
+				</li>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link nav-style" href="#">Favoris</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link nav-style" href="#">Deconnexion</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link nav-style" href="#">Compte utlisateur</a>
+			</li>
+		</ul>
+	</div>
 </nav>

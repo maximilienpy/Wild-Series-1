@@ -3,10 +3,10 @@
 {% block title %}Series{% endblock %}
 
 {% block body %}
-    <h1>Les séries par catégorie</h1>
+    <h1>Les séries par catégorie : {{ category.name}}</h1>
     {% for program in programs %}
         <div>
-            <h2>{{ loop.index }} - Catégorie : {{ program.title }}</h2>
+            <h2>{{ loop.index }} - Série : {{ program.title}}</h2>
             <p>{{ program.summary }}</p>
             <a href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a>
         </div>
