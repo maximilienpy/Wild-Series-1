@@ -34,7 +34,7 @@ Class ProgramController extends AbstractController
         /**
      * The controller for the category add form
      *
-     * @Route("/new", name="new")
+     * @Route("/new",  methods={"GET", "POST"}, name="new")
      */
     public function new(Request $request) : Response
     {
@@ -43,7 +43,7 @@ Class ProgramController extends AbstractController
         $form = $this->createForm(ProgramType::class, $program);
         $form->handleRequest($request);
  
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($program);
             $entityManager->flush();
