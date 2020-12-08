@@ -22,7 +22,7 @@ class ActorFixtures extends Fixture implements DependentFixtureInterface {
         foreach (self::ACTORS as $key => $actorName){
             $actor = new Actor();
             $actor->setName($actorName);
-            $actor->addProgram($this->getReference('program_1'));
+            $actor->addProgram($this->getReference('program_0'));
             $manager->persist($actor);
         }
         

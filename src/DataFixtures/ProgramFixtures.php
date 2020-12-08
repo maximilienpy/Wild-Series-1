@@ -49,7 +49,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface {
             $program->setPoster($faker->imageUrl(500,400));
             $manager->persist($program);  
             $this->addReference('program_'.$i, $program);
-            $program->setCategory($this->getReference('categorie_' .rand(0,5)));
+            $program->setCategory($this->getReference('category_' .rand(0,5)));
             $i++;
         }  
         $manager->flush();
