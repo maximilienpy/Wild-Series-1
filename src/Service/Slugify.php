@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Service;
+
+class Slugify 
+{
+    public function generate(string $input): string
+    {
+        $slug = trim($input);
+        $slug = strtolower($input);
+        $slug = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $slug );
+        $slug = preg_replace('/\p{P}+/u', '', $slug);
+        $slug = str_replace(' ', '-', $slug);
+        $slug = preg_replace('/\-+/', '-', $slug);
+        return $slug;
+    }
+}

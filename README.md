@@ -13,3 +13,5 @@ Video for the quest 14 : https://www.loom.com/share/6d98ca5ccd7c41cb91fa91166417
 Video for the quest 15 : https://www.loom.com/share/0905b15fca6d405c90299357ae08e531
 
 Video for the quest 16 : https://www.loom.com/share/963ce5e31cb54851b70d7ef60b1aff6f
+
+Video for the quest 17 : https://www.loom.com/share/8bddf4712dbe435b81546d93fd879ddd 
