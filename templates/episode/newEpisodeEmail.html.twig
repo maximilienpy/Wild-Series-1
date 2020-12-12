@@ -3,5 +3,5 @@
 {% block body %}
     <h1>Nouvel épisode {{ episode.title }} crée</h1>
     <p>Bonjour l'épisode numéro {{ episode.number }} intitulé {{ episode.title }} a bien été crée sur Wild Series</p>
-    <p>Synopsis : {{ episode.synopsis }}
+    <p><a href="http://localhost:8000{{ path('episode_show', {'slug': episode.slug}) }}">Voir la fiche de l'épisode</a><p>
 {% endblock %}
