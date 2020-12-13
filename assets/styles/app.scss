@@ -20,3 +20,9 @@ nav{
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active{
   color:white;
 }
+
+.episode-show{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,18 +1,62 @@
 {% extends 'base.html.twig' %}
-{% block title %}Episode #{{ episode.number }}{% endblock %}
+{% block title %}Episode #{{ episode.number }}
+{% endblock %}
 
 {% block body %}
-<div class="media">
-  <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
-  <div class="media-body">
-    <h2 class="mt-0">{{ program.title }} - Saison {{season.number}}</h2>
-    <h3>Episode {{episode.number}} - {{episode.title}}</h3>
-    <p>{{ episode.synopsis }}</p>
-      <a href="{{ path("program_season_show", {'program': program.id, 'season': season.id}) }}">
-          Retour à la liste des épisodes
-      </a>
-    </div>
-  </div>
-</div>
-
-{% endblock %}
+	<div class="container">
+		<div class="row">
+			<img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
+			<div class="media-body">
+				<h2 class="mt-0">{{ program.title }}
+					- Saison
+					{{season.number}}</h2>
+				<h3>Episode
+					{{episode.number}}
+					-
+					{{episode.title}}</h3>
+				<p>{{ episode.synopsis }}</p>
+				<a href="{{ path("program_season_show", {'program': program.id, 'season': season.id}) }}">
+					Retour à la liste des épisodes
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="row mt-2 episode-show">
+		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+			<div class="col-6">
+				{% if comments == true %}
+					<p>Ecrivez un commentaire</p>
+				{% else %}
+					<p>Soyez le premier à écrire un commentaire</p>
+				{% endif %}
+				{{ form_start(form) }}
+				{{ form_row(form.comment) }}
+				{{ form_row(form.rate) }}
+				<button class="btn">{{ button_label|default('Envoyer le commentaire') }}</button>
+				{{ form_end(form) }}
+			</div>
+		{% endif %}
+		{% if comments == true %}
+			<div class="col-6">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Note</th>
+							<th scope="col">Commentaire</th>
+							<th scope="col">Auteur</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for comment in comments %}
+							<tr>
+								<td>{{ comment.rate }}/ 5</td>
+								<td>{{ comment.comment }}</td>
+								<td>{{ comment.author }}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		{% endif %}
+	</div>
+</div>{% endblock %}

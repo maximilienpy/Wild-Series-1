@@ -2,12 +2,16 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Season;
+use App\Entity\Comment;
 use App\Entity\Episode;
 use App\Entity\Program;
 use App\Service\Slugify;
+use App\Form\CommentType;
 use App\Form\ProgramType;
 use Symfony\Component\Mime\Email;
+use App\Repository\CommentRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -107,16 +111,39 @@ Class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/{programId}/seasons/{seasonId}/episodes/{episodeId}", requirements={"season"="\d+"}, methods={"GET"}, name="episode_show")
+     * @Route("/{programId}/seasons/{seasonId}/episodes/{episodeId}", requirements={"season"="\d+"}, methods={"GET","POST"}, name="episode_show")
      * @ParamConverter("program", class="App\Entity\Program", options={"mapping": {"programId": "id"}})
      * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
      * @ParamConverter("episode", class="App\Entity\Episode", options={"mapping": {"episodeId": "id"}})
      */
-    public function showEpisode(Program $program, Season $season, Episode $episode){
+    public function showEpisode(Program $program, Season $season, Episode $episode, CommentRepository $commentRepository,Request $request)
+    {    
+        $user = $this->getUser();
+
+        $comment = new Comment();
+        $comment->setAuthor($user);
+        $comment->setEpisode($episode);
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($comment);
+            $entityManager->flush();
+        }
+
+        $comments = $commentRepository->findBy(
+                ['episode' => $episode], 
+                ['id' => 'DESC'],
+                5
+            );
+
         return $this->render('program/episode_show.html.twig', [
             'program' => $program,
             'season' => $season,
             'episode' => $episode,
+            'form' => $form->createView(),
+            'comments' => $comments
         ]);
     }
 }
