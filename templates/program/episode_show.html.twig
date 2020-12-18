@@ -52,6 +52,17 @@
 								<td>{{ comment.rate }}/ 5</td>
 								<td>{{ comment.comment }}</td>
 								<td>{{ comment.author }}</td>
+								<td>
+									 {% if app.user %}
+                    					{% if is_granted("ROLE_ADMIN") or app.user.email == comment.author.email %}
+									<form method="post" action="{{ path('program_comment_delete', {'commentId': comment.id}) }}" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer ce commentaire ?');">
+										<input type="hidden" name="_method" value="DELETE">
+										<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ comment.id) }}">
+										<button class="btn btn-danger">Supprimer</button>
+									</form>
+										{% endif %}
+									{% endif %}
+								</td>
 							</tr>
 						{% endfor %}
 					</tbody>
