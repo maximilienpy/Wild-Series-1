@@ -187,7 +187,7 @@ Class ProgramController extends AbstractController
             $entityManager->remove($comment);
             $entityManager->flush();
         }
-
-          return $this->redirectToRoute('program_index');
+        
+          return $this->redirect($request->server->get('HTTP_REFERER'));
     }
 }
