@@ -6,7 +6,7 @@
 	<div class="collapse navbar-collapse" id="navbarNavDropdown">
 		<ul class="navbar-nav">
 			<li class="nav-item active">
-				<a class="nav-link nav-style" href="{{ path('app_index') }}">ACCUEIL
+				<a class="nav-link nav-style" href="{{ path('app_index') }}">{{ 'home'|trans }}
 					<span class="sr-only">(current)</span>
 				</a>
 			</li>
@@ -15,10 +15,10 @@
 					SERIES
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="{{ path('program_index') }}">Toutes les séries</a>
-					<a class="dropdown-item" href="{{ path('program_new') }}">Ajouter une série</a>
-					<a class="dropdown-item" href="{{ path('season_index') }}">Toutes les saisons</a>
-					<a class="dropdown-item" href="{{ path('episode_index') }}">Tous les épisodes</a>
+					<a class="dropdown-item" href="{{ path('program_index') }}">{{ 'all.programs'|trans }}</a>
+					<a class="dropdown-item" href="{{ path('program_new') }}">{{ 'add.program'|trans }}</a>
+					<a class="dropdown-item" href="{{ path('season_index') }}">{{ 'all.seasons'|trans }}</a>
+					<a class="dropdown-item" href="{{ path('episode_index') }}">{{ 'all.episods'|trans }}</a>
 				</li>
 			</li>
 			<li class="nav-item dropdown">
@@ -26,33 +26,39 @@
 					CATEGORIES
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="{{ path('category_index') }}">Toutes les catégories</a>
-					<a class="dropdown-item" href="{{ path('category_new') }}">Ajouter une catégorie</a>
+					<a class="dropdown-item" href="{{ path('category_index') }}">{{ 'all.categories'|trans }}</a>
+					<a class="dropdown-item" href="{{ path('category_new') }}">{{ 'add.category'|trans }}</a>
 				</li>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link nav-style" href="{{ path('actor_index') }}">ACTEURS</a>
+				<a class="nav-link nav-style" href="{{ path('actor_index') }}">{{ 'actors'|trans }}</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link nav-style" href="#">Favoris</a>
+				<a class="nav-link nav-style" href="#">{{ 'favorites'|trans }}</a>
 			</li>
 			<li class="nav-item">
 				{% if app.user %}
-					{{ app.user.email }}
-					<a class="nav-link nav-style" href="{{ path('app_logout') }}">
-						Deconnexion</a>
+				{% trans with {'%username%': app.user.email} %}
+					hello_username
+				{% endtrans %}
+					<a class="nav-link nav-style" href="{{ path('app_logout') }}">{{ 'account.logout'|trans }}</a>
 				{% else %}
-					<a class="nav-link nav-style" href="{{ path('app_login') }}">
-						Se connecter</a>
+					<a class="nav-link nav-style" href="{{ path('app_login')}}">{{ 'account.login'|trans }}</a>
 				{% endif %}
 			</li>
 			<li class="nav-item">
 				{% if app.user %}
-					<a class="nav-link nav-style" href="{{ path('app_profile') }}">Mon compte</a>
+					<a class="nav-link nav-style" href="{{ path('app_profile') }}">{{ 'my.account'|trans }}</a>
 				{% else %}
-					<a class="nav-link nav-style" href="{{ path('app_register') }}">Créer un compte</a>
+					<a class="nav-link nav-style" href="{{ path('app_register') }}">{{ 'create.account'|trans }}</a>
 				{% endif %}
 			</li>
-			</ul>
+			<li class="nav-item">
+        		<a class="nav-link" href="{{ path('app_index', {'_locale':'en'}) }}">EN</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ path('app_index', {'_locale':'fr'}) }}">FR</a>
+			</li>
+		</ul>
 	</div>
 </nav>

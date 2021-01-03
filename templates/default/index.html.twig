@@ -1,14 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Bienvenue sur Wild Series</h1>
-
-    <h2> Les dernières séries disponibles : </h2>
+    <h1>{{ 'welcome'|trans }}</h1>
+    <h2>{{ 'last.programs'|trans }} :</h2>
     {% for program in programs %}
         <div>
-            <h2>{{ program.title }} - Catégorie : {{ program.category.name }}</h2>
+            <h2>{{ program.title }} - {{ 'category'|trans }} : {{ program.category.name }}</h2>
             <p>{{ program.summary }}</p>
-            <a href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
+            <a href="{{ path("program_show", { slug: program.slug }) }}">{{ 'see'|trans }} </a>
         </div>
     {% endfor %}
 

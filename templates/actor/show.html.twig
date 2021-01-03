@@ -7,18 +7,18 @@
 	<div>
 		<h2>{{ actor.name}}</h2>
 		<div>
-			<strong>Liste des séries :</strong>
+			<strong>{{ 'index.actors'|trans }}</strong>
 			<ul>
 				{% for program in actor.programs %}
 					<li>
 						<a href="{{ path("program_show", { slug: program.slug }) }}">{{ program.title }}</a>
 					</li>
 				{% else %}
-					<li>Aucune série pour cet acteur</li>
+					<li>{{ 'no.program.actor'|trans }}</li>
 				{% endfor %}
 			</ul>
 		</div>
 		<a href="{{ path('actor_index') }}">
-			Retour à liste des acteurs
+			{{ 'return.actors'|trans }}
 		</a>
 	{% endblock %}

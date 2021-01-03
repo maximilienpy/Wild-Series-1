@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="CDjx2ju" resname="hello_username">
+        <source>hello_username</source>
+        <target>Bonjour %username%</target>
+      </trans-unit>
+      <trans-unit id="Q7UTU9q" resname="account.logout">
+        <source>account.logout</source>
+        <target>Deconnexion</target>
+      </trans-unit>
+      <trans-unit id="E_t5j6Q" resname="account.login">
+        <source>account.login</source>
+        <target>Se connecter</target>
+      </trans-unit>
+      <trans-unit id="q3kVHMp" resname="index.actors">
+        <source>index.actors</source>
+        <target>Liste des acteurs</target>
+      </trans-unit>
+      <trans-unit id="RLosylx" resname="no.program">
+        <source>no.program</source>
+        <target>Aucune série trouvée</target>
+      </trans-unit>
+      <trans-unit id="E2LQOuD" resname="no.program.actor">
+        <source>no.program.actor</source>
+        <target>Aucune série pour cet acteur</target>
+      </trans-unit>
+      <trans-unit id="DqzZZsB" resname="return.actors">
+        <source>return.actors</source>
+        <target>Retour à liste des acteurs</target>
+      </trans-unit>
+      <trans-unit id="TqFAWIF" resname="home">
+        <source>home</source>
+        <target>ACCUEIL</target>
+      </trans-unit>
+      <trans-unit id="i0hmopY" resname="all.programs">
+        <source>all.programs</source>
+        <target>Toutes les séries</target>
+      </trans-unit>
+      <trans-unit id="jMROJ5X" resname="add.program">
+        <source>add.program</source>
+        <target>Ajouter une série</target>
+      </trans-unit>
+      <trans-unit id="f1vb1A9" resname="all.seasons">
+        <source>all.seasons</source>
+        <target>Toutes les saisons</target>
+      </trans-unit>
+      <trans-unit id="Ex96.NV" resname="all.episods">
+        <source>all.episods</source>
+        <target>Tous les épisodes</target>
+      </trans-unit>
+      <trans-unit id="zBNbGVD" resname="all.categories">
+        <source>all.categories</source>
+        <target>Toutes les catégories</target>
+      </trans-unit>
+      <trans-unit id="Db5V0wl" resname="add.category">
+        <source>add.category</source>
+        <target>Ajouter une catégorie</target>
+      </trans-unit>
+      <trans-unit id="YFtyfT9" resname="actors">
+        <source>actors</source>
+        <target>ACTEURS</target>
+      </trans-unit>
+      <trans-unit id="9C0Pnks" resname="favorites">
+        <source>favorites</source>
+        <target>Favoris</target>
+      </trans-unit>
+      <trans-unit id="WM.2ack" resname="my.account">
+        <source>my.account</source>
+        <target>Mon compte</target>
+      </trans-unit>
+      <trans-unit id="KQd3OzL" resname="create.account">
+        <source>create.account</source>
+        <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="KA1Eqx6" resname="welcome">
+        <source>welcome</source>
+        <target>Bienvenue sur Wild Series</target>
+      </trans-unit>
+      <trans-unit id="y0pKx7e" resname="last.programs">
+        <source>last.programs</source>
+        <target>Les dernières séries disponibles</target>
+      </trans-unit>
+      <trans-unit id="7bLNO3T" resname="category">
+        <source>category</source>
+        <target>Catégorie</target>
+      </trans-unit>
+      <trans-unit id="qp6bXJB" resname="see">
+        <source>see</source>
+        <target>Voir</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

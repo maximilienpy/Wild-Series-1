@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="CDjx2ju" resname="hello_username">
+        <source>hello_username</source>
+        <target>Hello %username%</target>
+      </trans-unit>
+      <trans-unit id="Q7UTU9q" resname="account.logout">
+        <source>account.logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="E_t5j6Q" resname="account.login">
+        <source>account.login</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="q3kVHMp" resname="index.actors">
+        <source>index.actors</source>
+        <target>List of actors</target>
+      </trans-unit>
+      <trans-unit id="RLosylx" resname="no.program">
+        <source>no.program</source>
+        <target>No program found</target>
+      </trans-unit>
+      <trans-unit id="E2LQOuD" resname="no.program.actor">
+        <source>no.program.actor</source>
+        <target>No program for this actor</target>
+      </trans-unit>
+      <trans-unit id="DqzZZsB" resname="return.actors">
+        <source>return.actors</source>
+        <target>Back to list of actors</target>
+      </trans-unit>
+      <trans-unit id="TqFAWIF" resname="home">
+        <source>home</source>
+        <target>HOME</target>
+      </trans-unit>
+      <trans-unit id="i0hmopY" resname="all.programs">
+        <source>all.programs</source>
+        <target>All programs</target>
+      </trans-unit>
+      <trans-unit id="jMROJ5X" resname="add.program">
+        <source>add.program</source>
+        <target>Add a program</target>
+      </trans-unit>
+      <trans-unit id="f1vb1A9" resname="all.seasons">
+        <source>all.seasons</source>
+        <target>All seasons</target>
+      </trans-unit>
+      <trans-unit id="Ex96.NV" resname="all.episods">
+        <source>all.episods</source>
+        <target>All episods</target>
+      </trans-unit>
+      <trans-unit id="zBNbGVD" resname="all.categories">
+        <source>all.categories</source>
+        <target>All categories</target>
+      </trans-unit>
+      <trans-unit id="Db5V0wl" resname="add.category">
+        <source>add.category</source>
+        <target>Add a category</target>
+      </trans-unit>
+      <trans-unit id="YFtyfT9" resname="actors">
+        <source>actors</source>
+        <target>ACTORS</target>
+      </trans-unit>
+      <trans-unit id="9C0Pnks" resname="favorites">
+        <source>favorites</source>
+        <target>Favorites</target>
+      </trans-unit>
+      <trans-unit id="WM.2ack" resname="my.account">
+        <source>my.account</source>
+        <target>My account</target>
+      </trans-unit>
+      <trans-unit id="KQd3OzL" resname="create.account">
+        <source>create.account</source>
+        <target>Create an account</target>
+      </trans-unit>
+      <trans-unit id="KA1Eqx6" resname="welcome">
+        <source>welcome</source>
+        <target>Welcome on Wild Series</target>
+      </trans-unit>
+      <trans-unit id="y0pKx7e" resname="last.programs">
+        <source>last.programs</source>
+        <target>Latest programs available</target>
+      </trans-unit>
+      <trans-unit id="7bLNO3T" resname="category">
+        <source>category</source>
+        <target>Category</target>
+      </trans-unit>
+      <trans-unit id="qp6bXJB" resname="see">
+        <source>see</source>
+        <target>See</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Liste des acteurs :
+	<h1>{{ 'index.actors'|trans }}
 	</h1>
 	{% for actor in actors %}
 		<div>
@@ -12,6 +12,6 @@
 			</p>
 		</div>
 	{% else %}
-		Aucune série trouvée.
+		{{ 'no.program'|trans }}
 	{% endfor %}
 {% endblock %}
