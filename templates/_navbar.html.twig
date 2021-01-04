@@ -19,7 +19,7 @@
 					<a class="dropdown-item" href="{{ path('program_new') }}">{{ 'add.program'|trans }}</a>
 					<a class="dropdown-item" href="{{ path('season_index') }}">{{ 'all.seasons'|trans }}</a>
 					<a class="dropdown-item" href="{{ path('episode_index') }}">{{ 'all.episods'|trans }}</a>
-				</li>
+				</div>
 			</li>
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -27,8 +27,9 @@
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="{{ path('category_index') }}">{{ 'all.categories'|trans }}</a>
+           			{{render(controller('App\\Controller\\DefaultController::navbarTop'))}}
 					<a class="dropdown-item" href="{{ path('category_new') }}">{{ 'add.category'|trans }}</a>
-				</li>
+				</div>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link nav-style" href="{{ path('actor_index') }}">{{ 'actors'|trans }}</a>
