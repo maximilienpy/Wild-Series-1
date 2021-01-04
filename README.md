@@ -30,4 +30,4 @@ Video for the quest 24 : https://www.loom.com/share/7213dc39767740cda39925483cd8
 
 Video for the quest 25 : https://www.loom.com/share/729f2b9d3b7f4343bcd18d4e8d0f49ed
 
-Video for the quest 26 : https://www.loom.com/share/c474f12534b44c44b4cb9e3df8edbfca
+Video for the quest 26 : https://www.loom.com/share/5d91276cbe0b42b9a4c0b81cd084078c
