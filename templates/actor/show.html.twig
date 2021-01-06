@@ -7,7 +7,7 @@
 	<div>
 		<h2>{{ actor.name}}</h2>
 		<div>
-			<strong>{{ 'index.actors'|trans }}</strong>
+			<strong>Cet acteur joue dans ces séries :</strong>
 			<ul>
 				{% for program in actor.programs %}
 					<li>
@@ -18,6 +18,10 @@
 				{% endfor %}
 			</ul>
 		</div>
+		<div class="media">
+			<img class="align-self-start mr-3 size-img-actor" src="/uploads/{{ actor.picture }}" alt="{{ actor.name }}">
+		<div class="media-body">
+		<a href="{{ path('actor_edit', {'id': actor.id}) }}">Modifier</a>
 		<a href="{{ path('actor_index') }}">
 			{{ 'return.actors'|trans }}
 		</a>

@@ -10,3 +10,10 @@ vich_uploader:
                 delete_on_update: true
                 namer:
                     service: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+            actor_file:
+                    uri_prefix: /images/pictures
+                    upload_destination: '%upload_directory%'
+                    delete_on_update: true
+                    namer: 
+                        service: Vich\UploaderBundle\Naming\SmartUniqueNamer

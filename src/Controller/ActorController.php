@@ -2,11 +2,14 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Actor;
+use App\Form\ActorType;
+use App\Repository\ActorRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Actor;
-use App\Repository\ActorRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
 * @Route("/actor", name="actor_")
@@ -33,4 +36,24 @@ class ActorController extends AbstractController
         ]);
     }
 
+        /**
+     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
+     * @ParamConverter("actor", class="App\Entity\Actor", options={"mapping": {"id": "id"}})
+     */
+    public function edit(Request $request, Actor $actor): Response
+    {        
+        $form = $this->createForm(ActorType::class, $actor);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'L\' acteur a bien été modifié');
+            return $this->redirectToRoute('actor_index');
+        }
+
+        return $this->render('actor/edit.html.twig', [
+            'actor' => $actor,
+            'form' => $form->createView(),
+        ]);
+    }   
 }
